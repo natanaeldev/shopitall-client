@@ -2,20 +2,16 @@ import { React, useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 
-import HomePage from "./pages/HomePage/HomePage";
-import ProductsPage from "./pages/ProductsPage/ProductsPage";
-import SingleProductPage from "./pages/SingleProdoctPage/SingleProductPage";
-import NavBar from "./components/NavBar/NavBar";
-import Footer from "./components/Footer/Footer";
-import SignInPage from "./pages/SignInPage/SignInPage";
-import SignUpPage from "./pages/SignUpPage/SignUpPage";
-import CartPage from "./pages/CartPage/CartPage";
+import HomePage from "../../pages/HomePage/HomePage";
+import ProductsPage from "../../pages/ProductsPage/ProductsPage";
+import SingleProductPage from "../../pages/SingleProdoctPage/SingleProductPage";
+import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
+import SignInPage from "../../pages/SignInPage/SignInPage";
+import SignUpPage from "../../pages/SignUpPage/SignUpPage";
+import CartPage from "../../pages/CartPage/CartPage";
 
-import "./App.scss";
-
-const apiKey = process.env.REACT_APP_API_URL;
-
-function App() {
+function MainComponent() {
   const [productsContent, setProductContent] = useState(null);
   const [userSignUp, setUserSignUp] = useState(false);
   const [cartCount, setcartCount] = useState(0);
@@ -24,7 +20,6 @@ function App() {
   const [success, setSuccess] = useState(false);
   const [failedAuth, setFailAuth] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
-
   const handleSignOut = (e) => {
     e.preventDefault();
 
@@ -51,7 +46,7 @@ function App() {
     let password = form.password.value;
 
     axios
-      .post(`${apiKey}users/login`, {
+      .post(`http://localhost:8080/api/v1/users/login`, {
         username: username,
         password: password,
       })
@@ -74,7 +69,7 @@ function App() {
     let password = form.password.value;
 
     axios
-      .post(`${apiKey}register`, {
+      .post(`http://localhost:8080/api/v1/register`, {
         firstname: firstname,
         lastname: lastname,
         email: email,
@@ -94,18 +89,21 @@ function App() {
   const handleCheckout = (e, data) => {
     e.preventDefault();
     e.stopPropagation();
-
+    console.log(e);
     axios
-      .post(`${apiKey}create-checkout-session`, {
+      .post(`http://localhost:8080/api/v1/create-checkout-session`, {
         products: data,
       })
       .then((response) => {})
-      .catch((error) => {});
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const loadProducts = () => {
-    axios.get(`${apiKey}products`).then((response) => {
+    axios.get(`http://localhost:8080/api/v1/products`).then((response) => {
       setProductContent(response.data);
+      console.log(response.data);
     });
   };
 
@@ -118,7 +116,7 @@ function App() {
     }
 
     axios
-      .get(`${apiKey}users/current`, {
+      .get(`http://localhost:8080/api/v1/users/current`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -128,78 +126,7 @@ function App() {
         setFailAuth(true);
       });
   }, []);
-
-  console.log(`this is a key:${process.env.REACT_APP_API_URL}`);
-  return (
-    <BrowserRouter>
-      <NavBar
-        success={success}
-        firstname={currentUser}
-        handleSignOut={handleSignOut}
-        cartCount={cartCount}
-        failedAuth={failedAuth}
-      />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/products"
-          element={
-            productsContent && (
-              <ProductsPage
-                productsContent={productsContent}
-                loadProducts={loadProducts}
-              />
-            )
-          }
-        />
-        <Route
-          path="products/:productid"
-          element={
-            <SingleProductPage
-              handleCartCount={handleCartCount}
-              currentUser={currentUser}
-            />
-          }
-        />
-        <Route
-          path="/products/category/:category"
-          element={<ProductsPage productsContent={productsContent} />}
-        />
-
-        <Route
-          path="/cart"
-          element={
-            <CartPage
-              handleCheckout={handleCheckout}
-              productsContent={productsContent}
-            />
-          }
-        />
-        <Route
-          path="/signin"
-          element={
-            <SignInPage
-              success={success}
-              error={error}
-              handleSubmit={handleSubmit}
-            />
-          }
-        />
-        <Route
-          path="/signup"
-          element={
-            <SignUpPage
-              error={error}
-              userSignUp={userSignUp}
-              handleSignUp={handleSignUp}
-              handleCartCount={handleCartCount}
-            />
-          }
-        />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
-  );
+  return <div>MainComponent</div>;
 }
 
-export default App;
+export default MainComponent;
