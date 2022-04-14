@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d50d3581.css",
+    "main.js": "/static/js/main.ac94ceba.js",
+    "static/media/sneakers.jpg": "/static/media/sneakers.f1603cde2077cdff6f0c.jpg",
+    "static/media/Man.jpg": "/static/media/Man.baedf49fc03c275004a2.jpg",
+    "static/media/woman.jpg": "/static/media/woman.76d96c11f5277be6e906.jpg",
+    "static/media/T-shirt.jpg": "/static/media/T-shirt.4d1fcb6b417be4094846.jpg",
+    "static/media/AvenirNextLTPro-Bold.eot": "/static/media/AvenirNextLTPro-Bold.3ef322dfb152e942ba45.eot",
+    "static/media/AvenirNextLTPro-Bold.ttf": "/static/media/AvenirNextLTPro-Bold.056dfb3c227ee30de068.ttf",
+    "static/media/AvenirNextLTPro-Regular.eot": "/static/media/AvenirNextLTPro-Regular.784a36aadf324e6859d3.eot",
+    "static/media/AvenirNextLTPro-Regular.ttf": "/static/media/AvenirNextLTPro-Regular.bcd8998dc53bfd23b3fc.ttf",
+    "static/media/AvenirNextLTPro-Bold.otf": "/static/media/AvenirNextLTPro-Bold.abfbc7167526a2d9f205.otf",
+    "static/media/AvenirNextLTPro-Regular.otf": "/static/media/AvenirNextLTPro-Regular.75d8c490a81ae1a6be46.otf",
+    "static/media/AvenirNextLTPro-Bold.woff": "/static/media/AvenirNextLTPro-Bold.270bb1b4c11605bae79a.woff",
+    "static/media/AvenirNextLTPro-Regular.woff": "/static/media/AvenirNextLTPro-Regular.1b08d435cda9f5b2011c.woff",
+    "static/media/AvenirNextLTPro-Bold.woff2": "/static/media/AvenirNextLTPro-Bold.bf4844e38339b66d370e.woff2",
+    "static/media/AvenirNextLTPro-Regular.woff2": "/static/media/AvenirNextLTPro-Regular.6ef92bd01cbcd4069853.woff2",
+    "index.html": "/index.html",
+    "main.d50d3581.css.map": "/static/css/main.d50d3581.css.map",
+    "main.ac94ceba.js.map": "/static/js/main.ac94ceba.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d50d3581.css",
+    "static/js/main.ac94ceba.js"
+  ]
+}
