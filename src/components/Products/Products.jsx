@@ -5,8 +5,9 @@ import ProductsCard from "../ProductsCard/ProductsCard";
 import "./Products.scss";
 import axios from "axios";
 
+const apiKey = process.env.REACT_APP_API_URL;
+
 function Products({ productsContent }) {
-  const apiKey = process.env.REACT_APP_API_URL;
   const params = useParams();
   const [contentByCategory, setContentByCategory] = useState(false);
 
