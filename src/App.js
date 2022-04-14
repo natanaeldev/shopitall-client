@@ -129,7 +129,7 @@ function App() {
       });
   }, []);
 
-  console.log(`this is a keys:${process.env.REACT_APP_API_URL}`);
+  console.log(`this is a keysgit :${process.env.REACT_APP_API_URL}`);
   return (
     <BrowserRouter>
       <NavBar
