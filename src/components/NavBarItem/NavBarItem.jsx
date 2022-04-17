@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import "./NavBarItem.scss";
 
-function NavBarItem({ closeMenu, success, firstname, handleSignOut }) {
+function NavBarItem({ closeMenu, success, currentUser, handleSignOut }) {
   return (
     <>
       <li className="navbar-menu hideTable">
@@ -11,7 +11,7 @@ function NavBarItem({ closeMenu, success, firstname, handleSignOut }) {
           ""
         ) : (
           <span className="navbar-menu__items-link">
-            {firstname.firstname.toUpperCase()}
+            {currentUser.firstname.toUpperCase()}
           </span>
         )}
 
@@ -55,7 +55,7 @@ function NavBarItem({ closeMenu, success, firstname, handleSignOut }) {
           <span className="navbarTable-menu__items-link ">Welcome!</span>
         ) : (
           <span className="navbarTable-menu__items-link navbarTable-menu__items-link--size">
-            {firstname ? firstname.firstname.toUpperCase() : ""}
+            {currentUser.firstname.toUpperCase()}
           </span>
         )}
 

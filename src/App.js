@@ -109,10 +109,9 @@ function App() {
     });
   };
 
-  useEffect(() => {
-    loadProducts();
-
+  const loadCurrentUser = () => {
     const token = sessionStorage.getItem("token");
+
     if (!token) {
       return setFailAuth(true);
     }
@@ -127,18 +126,23 @@ function App() {
       .catch((error) => {
         setFailAuth(true);
       });
+  };
+
+  useEffect(() => {
+    loadProducts();
+    loadCurrentUser();
   }, []);
 
-  console.log(`this is a keysgit :${process.env.REACT_APP_API_URL}`);
   return (
     <BrowserRouter>
       <NavBar
         success={success}
-        firstname={currentUser}
+        currentUser={currentUser}
         handleSignOut={handleSignOut}
         cartCount={cartCount}
         failedAuth={failedAuth}
       />
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
