@@ -9,7 +9,7 @@ function AboutComponent() {
         <h2 className="about__title">About us</h2>
         <div className="about__descriptions">
           <p className="about__descriptions-paragraph">
-            ShopItAll is an online clothing store. I started building this
+            ShopItAll is an online clothing store. <br />I started building this
             project for my capstone in BrainStation. Things that you will see in
             this project:
           </p>

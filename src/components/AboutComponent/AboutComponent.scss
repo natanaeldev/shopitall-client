@@ -25,6 +25,16 @@
     font-weight: 700;
   }
 
+  &__descriptions {
+    padding: 1rem;
+    color: $color-black;
+  }
+
+  &__descriptions-paragraph {
+    padding: 0.55rem 0;
+    font-size: 1rem;
+  }
+
   &__contact-me {
     display: flex;
     flex-direction: column;
