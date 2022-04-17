@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import SignInPage from "./pages/SignInPage/SignInPage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import CartPage from "./pages/CartPage/CartPage";
+import AboutPage from "./pages/AboutPage/AboutPage";
 
 import "./App.scss";
 
@@ -196,6 +197,7 @@ function App() {
             />
           }
         />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
